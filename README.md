@@ -1,6 +1,6 @@
-## !Rails
+## offTheRails
 
-!Rails is a model-views-controller (MVC) web application framework written in Ruby and inspired by Ruby on Rails that accepts incoming HTTP requests and generates suitable responses. It employs Rack to create a server and utilizes a custom Router to evaluate inbound requests made to the server and map each request to an appropriate controller. Within the controllers, several methods methods are applied to the requests in order to yield a custom response for each request.
+offTheRails is a model-views-controller (MVC) web application framework written in Ruby and inspired by Ruby on Rails that accepts incoming HTTP requests and generates suitable responses. It employs Rack to create a server and utilizes a custom Router to evaluate inbound requests made to the server and map each request to an appropriate controller. Within the controllers, several methods methods are applied to the requests in order to yield a custom response for each request.
 
 The `Router` evaluates incoming requests and directs them to the appropriate controller:
 ```Ruby

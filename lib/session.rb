@@ -2,7 +2,7 @@ require 'json'
 
 class Session
   def initialize(req)
-    cookie = req.cookies['_!ruby_on_rails']
+    cookie = req.cookies['_off_the_rails']
     @data = cookie ? JSON.parse(cookie) : {}
   end
 
@@ -15,6 +15,6 @@ class Session
   end
 
   def store_session(res)
-    res.set_cookie('_!ruby_on_rails', {path: '/', value: @data.to_json})
+    res.set_cookie('_off_the_rails', {path: '/', value: @data.to_json})
   end
 end

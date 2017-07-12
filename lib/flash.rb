@@ -3,7 +3,7 @@ require 'json'
 class Flash
   attr_reader :now
   def initialize(req)
-    flash = req.cookies['_!ruby_on_rails']
+    flash = req.cookies['_off_the_rails_flash']
     @now = flash ? JSON.parse(flash) : {}
     @flash = {}
   end
@@ -18,7 +18,7 @@ class Flash
 
   def store_flash(res)
     res.set_cookie(
-      '_!ruby_on_rails_flash',
+      '_off_the_rails_flash',
       value: @flash.to_json,
       path: '/'
     )
