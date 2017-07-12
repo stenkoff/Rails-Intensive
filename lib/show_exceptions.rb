@@ -2,6 +2,7 @@ require 'erb'
 
 class ShowExceptions
   attr_reader :app
+  
   def initialize(app)
     @app = app
   end

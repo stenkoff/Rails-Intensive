@@ -1,1 +1,4 @@
 spec/
+.byebug_history
+.DS_STORE
+.rspec
