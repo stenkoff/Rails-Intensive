@@ -1,6 +1,6 @@
-##!Rails
+## !Rails
 
-!Rails is a model-views-controller (MVC) web application framework written in Ruby and inspired by Ruby on Rails that accepts incoming HTTP requests and generates suitable responses. It employs Rack to create a server and utilizes a custom Router to evaluate inbound requests made to the server and map each request to an appropriate controller. Within the controller, a series of methods is then applied to the request in order to yield a custom response for each request.
+!Rails is a model-views-controller (MVC) web application framework written in Ruby and inspired by Ruby on Rails that accepts incoming HTTP requests and generates suitable responses. It employs Rack to create a server and utilizes a custom Router to evaluate inbound requests made to the server and map each request to an appropriate controller. Within the controllers, several methods methods are applied to the requests in order to yield a custom response for each request.
 
 The `Router` evaluates incoming requests and directs them to the appropriate controller:
 ```Ruby
@@ -14,7 +14,7 @@ The `Router` evaluates incoming requests and directs them to the appropriate con
   end
 end
 ```
-The controllers can generate appropriate responses by utilizing a series of methods made available through the extension of the `ControllerBase` class, including:
+The controllers generate appropriate responses by utilizing a series of methods made available by extension of the `ControllerBase` class, including:
 
 - `redirect_to(url)`: redirects to the given url
 - `render(template_name)`: analyzes templates using ERB and passes them to `render_content`.
