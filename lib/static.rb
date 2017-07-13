@@ -2,7 +2,7 @@ class Static
   def initialize(app)
     @app = app
     @root = :public
-    @file_server = FileServer.new(root)
+    @file_server = FileServer.new(@root)
   end
 
   def call(env)

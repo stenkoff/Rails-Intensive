@@ -2,6 +2,7 @@ require 'active_support'
 require 'active_support/core_ext'
 require 'erb'
 require_relative './session'
+require_relative './flash'
 
 class ControllerBase
   attr_reader :req, :res, :params
@@ -22,6 +23,7 @@ class ControllerBase
     res.status = 302
     self.already_built_response = true
     session.store_session(res)
+    flash.store_flash(res)
   end
 
   def render_content(content, content_type)
@@ -30,12 +32,17 @@ class ControllerBase
     res['Content-Type'] = content_type
     self.already_built_response = true
     session.store_session(res)
+    flash.store_flash(res)
   end
 
   def render(template_name)
-    file = File.read("views/#{self.class.to_s.underscore}/#{template_name}.html.erb")
-    content = ERB.new(file).result(binding)
-    render_content(content, 'text/html')
+    dir_path = File.dirname(__FILE__)
+    template_fname = File.join(
+      dir_path, "..",
+      "views", self.class.name.underscore, "#{template_name}.html.erb"
+      )
+    content = ERB.new(File.read(template_fname)).result(binding)
+    render_content(content, "text/html")
   end
 
   def session
@@ -50,6 +57,10 @@ class ControllerBase
     @token ||= generate_authenticity_token
     res.set_cookie('authenticity_token', value: @token, path: '/')
     @token
+  end
+
+  def flash
+    @flash ||= Flash.new(req)
   end
 
   protected
