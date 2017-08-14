@@ -1,0 +1,10 @@
+<h1><%= @recipe.first[:name] %></h1>
+<h2>Ingredients</h2>
+<ul>
+  <% @recipe.first[:ingredients].split(',').each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+<h2>Directions</h2>
+<ul><%= @recipe.first[:directions] %></ul>
+<a href= "/recipes" >Recipes Index</a>
