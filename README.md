@@ -30,6 +30,7 @@ def render_content(content, content_type)
 end
 ```
 ### Demo
-- Clone this repository `https://github.com/stenkoff/offTheRails.git`
-- Navigate to the directory containing demo_server.rb
+- Clone this repository
+- Run bundle install
+- Navigate to the directory containing `demo_server.rb`
 - Run `ruby demo_server.rb` and go to  `localhost:3000/recipes` in your browser
