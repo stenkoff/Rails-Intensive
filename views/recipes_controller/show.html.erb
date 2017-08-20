@@ -1,10 +1,12 @@
-<h1><%= @recipe.first[:name] %></h1>
-<h2>Ingredients</h2>
-<ul>
-  <% @recipe.first[:ingredients].split(',').each do |ingredient| %>
-    <li><%= ingredient %></li>
-  <% end %>
-</ul>
-<h2>Directions</h2>
-<ul><%= @recipe.first[:directions] %></ul>
-<a href= "/recipes" >Recipes Index</a>
+<div style = "font-family: Arial, sans-serif; color: black">
+  <h1><%= @recipe.first[:name] %></h1>
+    <h2>Ingredients</h2>
+    <div style="margin-left: 15px;">
+    <% @recipe.first[:ingredients].split(',').each do |ingredient| %>
+      <li style="list-style: none"><%= ingredient %></li>
+    <% end %>
+    </div>
+    <h2 >Directions</h2>
+    <div style="margin: 20px;"><%= @recipe.first[:directions] %></div>
+    <a href= "/recipes" >Recipes Index</a>
+</div>
